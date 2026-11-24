@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Film skeleton</title>
+<style>html,body{margin:0;background:#111;height:100%;overflow:hidden}canvas{display:block}
+#play{position:fixed;left:16px;bottom:16px;min-width:44px;min-height:44px;padding:0 16px;border:0;border-radius:8px;background:#fff;color:#111;font:600 14px system-ui;cursor:pointer}
+body.rec #play{display:none}</style></head>
+<body>
+<canvas id="c"></canvas><button id="play">Play</button>
+<script type="importmap">{"imports":{"three":"./three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+// ---- spec (edit) --------------------------------------------------------
+const FPS = 30, DURATION = 15;
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1920, H = +q.get('h') || 1080;
+if (q.has('w')) document.body.classList.add('rec');
+// ---- determinism helpers: no Math.random, no Date.now, no clocks -----------
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const rnd = mulberry32(12345);               // seed once, build everything up front
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease={ outCubic:x=>1-Math.pow(1-x,3), inOutCubic:x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,
+  outExpo:x=>x===1?1:1-Math.pow(2,-10*x), outBack:x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)} };
+const seg=(t,a,b)=>clamp((t-a)/(b-a));          // progress of t inside [a,b]
+// ---- audio levels: precomputed JSON from analyse_audio.py, looked up by t ---
+let LEVELS=null;
+async function loadLevels(){ try{ LEVELS=await (await fetch('levels.json')).json(); }catch(e){ LEVELS=null; } }
+const level=(k,t)=>{ if(!LEVELS) return 0; const i=clamp(Math.round(t*LEVELS.fps),0,LEVELS.n-1); return LEVELS[k][i]; };
+// ---- scene ----------------------------------------------------------------
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(1); renderer.setSize(W,H,false);
+document.getElementById('c').style.width='min(100vw,'+W+'px)'; 
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0xfff6c8);
+const cam=new THREE.PerspectiveCamera(32,W/H,0.1,100);
+scene.add(new THREE.HemisphereLight(0xffffff,0xffe9a0,1.1));
+const key=new THREE.DirectionalLight(0xffffff,2.2); key.position.set(3,4,5); scene.add(key);
+const hero=new THREE.Mesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshStandardMaterial({color:0xf4c20d,metalness:.3,roughness:.35}));
+scene.add(hero);
+// ---- the one function that draws a frame -----------------------------------
+// Everything below depends ONLY on t (and seeded data built above). Never accumulate state between frames.
+window.renderFrame=function(t){
+  const p=ease.inOutCubic(seg(t,0,DURATION));
+  cam.position.set(Math.sin(p*1.2)*4,1.2,5-p*1.5); cam.lookAt(0,0,0);   // camera is a pure function of t
+  const pulse=1+0.15*level('bass',t);                                    // audio-reactive from the lookup table
+  hero.rotation.set(t*0.8,t*1.1,0); hero.scale.setScalar(pulse*ease.outBack(seg(t,0,0.8)));
+  renderer.render(scene,cam);
+};
+// ---- real-time preview: audio plays, frames follow the audio clock ----------
+const audio=new Audio(q.get('audio')||'music.mp3');
+document.getElementById('play').onclick=()=>{
+  audio.currentTime=0; audio.play();
+  const loop=()=>{ const t=audio.currentTime; window.renderFrame(Math.min(t,DURATION)); if(t<DURATION) requestAnimationFrame(loop); };
+  loop();
+};
+window.filmReady=loadLevels().then(()=>window.renderFrame(0));
+</script></body></html>

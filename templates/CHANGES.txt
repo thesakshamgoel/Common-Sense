@@ -1,0 +1,4 @@
+CHANGES
+Format: date (UTC) | role | change | files | version
+Renames or moves (only when the user asked): old name -> new name
+

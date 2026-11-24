@@ -1,0 +1,219 @@
+COMMON SENSE: CHANGE LOG
+Format: date and time | change | files | backup
+Times are approximate. This log was reconstructed afterwards from the conversation, not written live.
+Times are UTC, with IST (UTC+5:30) in brackets. Backup suffixes use the IST date.
+From now on this file is updated on every edit.
+
+2026-11-18 ~02:25-02:40 UTC (IST 07:55-08:10)
+- Created agents-v1 (designer, builder, checker, delivery) with a handoff report.
+- Created Common Sense: merged CLAUDE.md (original rules plus 20 new items), the four agents in agents/, templates (STATUS.md, CHANGES.txt, CREDITS.md), README.
+- Original CLAUDE.md and agents-v1 left untouched.
+- Problem: the first README on the Mac was stale (the corrected version did not land). Found and fixed on 2026-11-22.
+- Files: CLAUDE.md, README.md, agents/*, templates/*
+- Backup: none (new files)
+
+2026-11-20 ~18:45-19:00 UTC (IST 21 Nov 00:15-00:30)
+- Added Reference Intake (open and log every link and upload, never bypass blocks), Motion and Premium Reference Research, Colour (60-30-10, Adobe Color, gradient rules), and rules: no overlapping text, no coloured side-bar cards.
+- Designer agent: reference intake step and colour line. Builder and checker: overlap, side-bar and 60-30-10 checks.
+- Added templates/reference-log.md. Rewrote README.
+- Fixed a garbled line in designer.md that my own edit had broken.
+- Files: CLAUDE.md, README.md, agents/designer.md, agents/builder.md, agents/checker.md, templates/reference-log.md
+- Backup: *.bak-2026-11-21
+
+2026-11-22 ~16:20-16:25 UTC (IST 21:50-21:55)
+- Added vetted copy of the LottieFiles motion-design skill (pinned commit d77a9fc, MIT, 20 files, SOURCE.md and LICENSE kept). Not installed into ~/.claude/skills. The user must copy it. Creator MCP not installed.
+- README: skills line and copy step.
+- Files: skills/motion-design/*, README.md
+- Backup: README.md.bak-2026-11-22
+
+2026-11-22 ~16:25-16:30 UTC (IST 21:55-22:00)
+- Added motion-playbook.md (12 principles, depth, elasticity, morphing, transitions, camera, build process, ban list, rubric) from the Wikipedia, dev.to and Prompt Motion sources.
+- Added reference-notes/motion-2026-11-22.md with honest status per reference (the Instagram reel was NOT SEEN at that point).
+- CLAUDE.md: pointer to the playbook, cheap-work tells, video definition of done. Designer, builder, checker: motion rules. README updated.
+- Backup: *.bak-2026-11-22b
+
+2026-11-22 ~16:35-16:45 UTC (IST 22:05-22:15)
+- Analysed the user's reel upload (frames and zoomed code panels). Added playbook Section 11 (live UI micro-interactions). Corrected the notes: the reel is SEEN PARTLY.
+- Refinement pass: Ask or Decide rule; handoffs stop only at gates, model switches, risks and user decisions; overlap rule allows deliberate text morphs; contained height animation allowed under 120 Hz; reference depth in tiers; film rules moved to film-pipeline.md; non-visual projects skip reference steps; designer no longer re-asks intake questions; designer tools line removed (inherits all tools); checker runs on sample, full build and risk; hierarchy includes the playbook and film file.
+- Files: CLAUDE.md, motion-playbook.md, film-pipeline.md (new), README.md, agents/*, reference-notes/motion-2026-11-22.md
+- Backup: *.bak-2026-11-22c
+
+2026-11-22 ~16:50 UTC (IST 22:20)
+- Created this file (CHANGES.txt).
+
+2026-11-22 ~17:15-17:30 UTC (IST 22:45-23:00)
+- Read six of the user's motion prompts (the first was pasted four times). Took what fits into the playbook and templates.
+- CLAUDE.md: logo rule changed (a supplied repo, link or upload, or a request, is permission; ask only if the user has no connection to the brand). User-supplied product material is not a study-only reference. Added opt-in one-shot mode. Tempo (BPM) added to the video spec ask.
+- motion-playbook.md: Section 12 (product, UI and showreel films: truth, through-line object, one-world camera, beat structure, spring maths, gotchas) and Section 13 (render capability, checks, defaults). Elasticity through stretch, squash and lag, overshoot about 10% or less. No cuts in single-world films. Ban list extended.
+- film-pipeline.md: audio (compose in code by default, beat-grid analysis, UI sounds on measured peaks, licence check).
+- templates/motion-brief.md added. Designer agent points to it.
+- Decisions on clashes: no italics kept (upright serif for tail lines), Geist allowed and Inter avoided, no hard cuts in single-world films.
+- Files: CLAUDE.md, motion-playbook.md, film-pipeline.md, templates/motion-brief.md, agents/designer.md, README.md, CHANGES.txt
+- Backup: *.bak-2026-11-22d
+
+2026-11-22 ~17:30-17:45 UTC (IST 23:00-23:15)
+- Read in full: motion-reel, animation-studio, brainstorming, design-elevation. ui-consistency read from the session notice only. The rest mapped by description (marked not read).
+- New skills-map.md: precedence, what to keep and override per skill, order for a rendered video project.
+- CLAUDE.md: Hierarchy and Questions point to skills-map.md; Working Order step 2 gets the two-or-three approaches message and a fresh-reader check; motion line names motion-reel and animation-studio.
+- motion-playbook.md: ban list (template defaults, flash on every cut, blank first frame, broken whip); added cut rules, post-blur effects, phone-size review, glyph check, single hits table, probe the final; new Section 14 (story shapes, sync gimmicks, captions, 9:16 safe area).
+- film-pipeline.md: audio (loudness options still asked, measure the mix, measured sync, honest delivery line); preview and final checks.
+- Not taken: Tailwind-only tokens, Inter, transition-all, silent execution, writing-plans chain, docs/superpowers path, motion-reel and animation-studio style defaults.
+- Backup: *.bak-2026-11-22e
+
+2026-11-22 ~17:45-17:55 UTC (IST 23:15-23:25)
+- Blender MCP added. Connection checked with one read-only call (get_objects_summary): connected, default scene (Camera, Cube, Light). Nothing was changed in Blender.
+- motion-playbook.md: new Section 15 (3D and Blender: safety, method, checks).
+- skills-map.md: Blender entry rewritten. CLAUDE.md motion line points to Section 15. README mention.
+- Backup: *.bak-2026-11-22f
+
+
+2026-11-23 (IST)
+- From the Shakeslip film v05 review and the user's reference film (Shakeslip.mov). User approved "apply all, show me the diff".
+- motion-playbook.md: anticipation not on UI (Section 1); exaggerate with scale and camera, not bounce (Section 1); variety from focus, one motion language, 2-3 signature transitions (Section 2); premium default for product films, overshoot 5% or less, pre-flight overshoot check (Section 3); new Section 6a Eye guidance; reference first with measured values, side-by-side review (Section 7); ban list additions (Section 8); rubric additions (Section 9); flow truth and calm background (Section 12); rhythm 0.3-0.6 s small changes, no hold over 0.9 s (Section 13).
+- CLAUDE.md: cheap tells extended; gradients may follow the focus; sample compared with the reference; eye-guidance line; near layer in UI films is not decoration.
+- film-pipeline.md: listen check at Gate 2; lossy-codec true-peak headroom.
+- Files: motion-playbook.md, CLAUDE.md, film-pipeline.md, CHANGES.txt
+- Backup: *.bak-2026-11-23
+
+2026-11-23 (IST), second pass
+- The user wrote a working order for motion graphics and principles. Clashes raised first and decided by the user: only invisible match cuts; Claude recommends the spec, the user confirms; the sample gate stays; effects off until the user picks them.
+- motion-playbook.md: new Section 0 (10-step motion working order + the user's principles: no elements for their own sake, holds neither too long nor too short, clear focus, pacing by the music, morphs, no dissolves or abrupt cuts, premium, rejected-elements list). Section 5 and 13 cut rules; ban list (dissolves, non-invisible cuts, effects not picked); Section 7 points to Section 0; Section 14 scene changes on bar lines.
+- CLAUDE.md: Working Order points motion projects to playbook Section 0 with the same gates; spec is recommended and confirmed; motion line runs Section 0; effects off until picked; references asked first for motion.
+- film-pipeline.md: spec recommended and confirmed; loudness recommended; music approved by the user (library, code or both); sound effects chosen by Claude.
+- Files: motion-playbook.md, CLAUDE.md, film-pipeline.md, CHANGES.txt
+- Backup: *.bak-2026-11-23b
+- Also: templates/motion-brief.md follows Section 0 (spec confirmed, references, approved music, approved background, effects picked, rejected list, script table, focus column); playbook Section 13 default music line updated. Backup: templates/motion-brief.md.bak-2026-11-23b
+
+2026-11-23 ~07:15 UTC (IST 12:45), third pass (before this pass the folder was re-read from the Mac, because a second session had edited it)
+- The user's problems with motion work: lengths too long or too short, never in balance; animations not smooth; colours strict to the repo; the background always the same; not enough diversity; flow broken; pacing weak.
+- motion-playbook.md: new Section 0a (A time budget with read-time ratio 1.0-1.5; B pacing as an energy plan; C flow by overlap, carried velocity, no stops; D smoothness checked by plots; E colour range, the brand as anchor and not a fence; F background and foreground seesaw, B0-B3 against F1-F3, sum 3 or 4; G variety across six axes). Section 0 steps 6, 8, 9 and two principles updated. Section 2 variety bullet rewritten (vocabulary of five to eight transitions replaces two or three signature ones). Section 3 overshoot reworded (premium 5% default, 10% only where the profile says). Section 7 pre-flight and review. Section 8 bans, Section 9 rubric, Section 12 background, colour and beat bullets, Section 13 hold line.
+- Changed from the user's own words of 2026-11-23: "a calm background" became "a background that never competes with the focus (and may change)"; the 0.9 s hold rule now defines a still hold as no change in the focus. Both are noted in the playbook.
+- CLAUDE.md: cheap tells, colour anchor rule, motion line points to 0a, Working Order wording, design palette line.
+- templates/motion-brief.md: colour worlds, backgrounds, transition vocabulary, script columns (read time, hold, energy, carried), variety table, 0a checks.
+- skills-map.md: loudness line and video order corrected. README updated.
+- Not run in a real project yet.
+- Backup: *.bak-2026-11-23c (taken from the Mac versions before editing)
+- Section 8: removed the older 'holds over about 0.5 s with no moving hold' ban, which clashed with the 0.9 s still-hold rule (Section 0a-A).
+
+2026-11-23 ~07:30 UTC (IST 13:00), camera
+- The user's problem: the camera is flat. Wanted dynamic moves that follow, go into perspective and bring out the focus.
+- motion-playbook.md: new Section 6b (build a perspective camera with layers at three or more depths; dolly instead of scale-zoom; lens 25-40 degrees for UI; move vocabulary with limits on text rotation; follow as a spring with mass, look-ahead and a continuous path; one operator for the film; the camera does the focusing through dolly, depth of field and tilt before any dimming; checks by path plot and parallax test). Section 6 2D bullet, Section 0a-G move list and Section 12 camera bullet updated. Ban list and rubric extended.
+- CLAUDE.md: cheap tells and the motion line point to Section 6b.
+- templates/motion-brief.md: camera plan table, operator line, new checks.
+- skills-map.md: perspective route through motion-reel 3-D sets (not read in full).
+- Numbers are starting values. Not run in a real project yet. CSS 3D has no true depth of field, so it is faked with per-plane blur.
+- Backup: *.bak-2026-11-23d
+
+2026-11-23 ~07:40 UTC (IST 13:10), guidance not law
+- The user said the rules are guidance and need not be followed strictly if a better product results.
+- CLAUDE.md Hierarchy: hard rules (safety, security, legal, honesty, gates and confirmations, the user's spec, file protection and backups, licences, AA text contrast, the user's Never list) do not bend. Everything else is guidance. Deviating is allowed with a one-line reason, shown in the storyboard or sample, logged under Deviations. No deviation to save effort or against something the user rejected.
+- motion-playbook.md intro says the same; pre-flight reports broken guidance as warnings with a reason.
+- templates/motion-brief.md: new Deviations section.
+- Note: the user's own principles of 2026-11-23 (no dissolves, invisible match cuts only and so on) are also guidance now. They can be broken in the same visible way, and the user can veto.
+
+2026-11-23 ~07:50 UTC (IST 13:20), skills review
+- Read in full: video-making, Remotion router and markup guide, interaction-design. Read tool descriptions: DaVinci Resolve, Figma motion and export, HyperFrames compose.
+- film-pipeline.md: new DaVinci Resolve section (sandboxed script first, project backup before changes, never touch the user's grades, LUTs in the MCP subfolder with versions, delete only on request); Epidemic Sound plan-terms check and track ID in CREDITS.
+- motion-playbook.md: peak and ending by design (0a-B); render efficiency habits (Section 13); new 11a live UI behaviour; new 16 Remotion route; new 17 Figma as a reference.
+- CLAUDE.md: Reference Intake points to Figma motion; Definition of Done asks for a state inventory.
+- skills-map.md: updated statuses; HyperFrames and Canva marked not used, with reasons.
+- Not done yet: context split of the playbook, a pre-flight script. Not run in a real project.
+- Backup: *.bak-2026-11-23e
+
+2026-11-23 ~08:10 UTC (IST 13:40), optimise
+- Correction to an earlier statement: only CLAUDE.md loads every session. The playbook is read on motion projects only, so the saving is per project type, not per session.
+- motion-playbook.md split by topic. Core file (index, Sections 0, 0a, 8, 9) is now about 15 KB. New motion/ files: craft (1-5), camera (6, 6a, 6b), build (7, 13, 16, 17), live-ui (10, 11, 11a), product-films (12, 14), blender (15). Section numbers unchanged. Checked by script that every original section appears exactly once.
+- CLAUDE.md: Team Workflow, Handoffs, Motion and Premium Reference Research and Style Profile moved to agents-workflow.md and reference-research.md, with short stubs kept under the same headings. CLAUDE.md went from about 44 KB to about 38 KB. Failure and Loop Limits, Change Requests and STATUS.md stayed (small and always needed).
+- tools/preflight.py (new): checks the Section 0a rules from the brief tables, a tokens file and a frames file. Tested on a clean sample (0 warnings) and a flawed sample (23 warnings), plus bad-path and no-argument handling. One bug found in testing (a track that starts moving was flagged as a jump) and fixed.
+- templates/motion-brief.md: Variety table gains a Length (s) column. README and tools/README.md updated.
+- Not done: running it inside Claude Code, and no real film has produced a frames file yet.
+- Backup: *.bak-2026-11-23f
+
+
+2026-11-23 ~14:40 UTC (IST 20:10), Zelios reference style
+- User supplied two YouTube references (LangEase ad, Teamble demo, both by Zelios) as the target look. Opened in the built-in browser, sampled as stills (7 and 8 frames). Status SEEN PARTLY. Motion not measured.
+- New motion/saas-explainer-style.md: film shape, background pairing table, dark/pastel background recipes (allowed deviation from no-gradient and no-glow defaults, with limits), kinetic type, floating UI cards and cursor hand, diagram patterns, measure-then-match procedure, checklist.
+- New reference-notes/motion-2026-11-23-zelios.md with the honest reference log.
+- motion-playbook.md: one index row for SaaS explainers. motion/live-ui.md: one pointer line. CLAUDE.md unchanged.
+- Not done: frame-by-frame motion capture of the key moments, and no film built to the style yet.
+- Backup: *.bak-2026-11-23g
+
+2026-11-23 ~14:55 UTC (IST 20:25), Zelios files measured
+- The user supplied both videos as files. Watched at 2 fps (LangEase) and 1 fps (Teamble) as contact sheets, two zoomed strips, plus measured scene lengths, cuts, energy, stillness, loudness and the timing of one shape morph.
+- motion/saas-explainer-style.md rewritten with measured rhythm (median scene 2.5-2.8 s, about 6-7% still frames, loudness), the signature devices (guide sparkle, shape becomes logo, click handoff to a tilted 3D panel, type becomes UI, scroll list, orbit) and measure-then-match steps. Guessed numbers removed or labelled.
+- reference-notes/motion-2026-11-23-zelios.md: both references upgraded from SEEN PARTLY to SEEN FULLY (picture), with what is still unknown (audio not listened to, most easing curves read by eye).
+- tools/ref_measure.py (new) and tools/README.md entry. Tested on LangEase, no-argument and missing-file cases.
+- Backup: *.bak-2026-11-23g (README, CHANGES, playbook, live-ui).
+
+2026-11-23 ~15:10 UTC (IST 20:40), animation catalogue
+- Studied the individual moves in both videos from 5-12.5 fps strips (logo reveal, footage-to-card-to-thumbnail, typewriter, masked reveal, giant word settle, number-cycle pill, click handoff, button morph, defocus-and-replace, orbit, accent blob sweep and more).
+- New motion/animation-catalogue.md: 26 recipes (what, how to build, timing seen, where it works). Timings are from strips so they are approximate, only the sparkle morph is measured. Curves are by eye.
+- motion/saas-explainer-style.md: pointer to the catalogue. motion-playbook.md index row updated.
+- Not done: no recipe has been built and compared with the reference yet.
+- Backup: motion-playbook.md.bak-2026-11-23h
+
+2026-11-23 ~15:35 UTC (IST 21:05), four more references
+- User supplied four more videos: SaaSWAVE (full 3D), VibeDocX, Motion Swell, Doks.ai. Watched whole at 2-3 fps (1 fps for VibeDocX), strips on key moments, measured with tools/ref_measure.py.
+- motion/animation-catalogue.md: entries 27-49 added (prompt-bar flows, zoom-to-type, ripple, pill-to-input, checklist card, word reel, camera dive, object match cuts, umbrella wipe, burst, type behind object, tilted deck, icon grid in perspective, 3D carousel, sparkle-to-inline-icon, ghost wallpaper, drawn icons, orbit, signature logo).
+- motion/saas-explainer-style.md: six-video measured table; style families (light, dark glow, bold gradient, full 3D); CORRECTION: the earlier "never dead" claim (6-7% still frames) did not hold across six videos (2-27%), now says fast montages stay low and UI-reading films hold longer.
+- reference-notes/motion-2026-11-23-zelios.md: rows 3-6 added.
+- Not done: audio not heard in any of the six; no recipe built or compared yet; 3D recipes need Blender (playbook Section 15).
+
+2026-11-23 ~16:00 UTC (IST 21:30), Three.js ad brief (YUZU SPARK)
+- User gave a Three.js product-ad brief to learn from (not to build here: its assets were not available).
+- New motion/threejs-film.md: working inside a supplied project folder (own subfolder, ignore listed files, spec lock), determinism rules (renderFrame(t), seeded RNG, closed-form particles and springs), audio-reactive from a precomputed levels table, preview, single-file note, motion-design look in Three.js, recording and checks.
+- New tools/threejs-film/: skeleton.html, analyse_audio.py, record.py, README.md. Tested on a small cube scene: 2 s draft recorded at 640x360, 30 fps, 60 frames, audio muxed; the same frame hashed identically after rendering other times; no-argument and bad-input handling checked for analyse_audio.py.
+- motion-playbook.md: one index row.
+- Not done: the YUZU SPARK ad was not built; 1080p render speed in software WebGL not measured; true inlined single-file build not tested.
+- Backup: motion-playbook.md.bak-2026-11-23i, CHANGES.txt.bak-2026-11-23i
+
+2026-11-24, user feedback on repetition, lazy elements, invented logo, weak backgrounds, render progress, engine choice
+- NEW motion/backgrounds.md + tools/backgrounds/ (backgrounds.js 12 recipes, render_sheet.py, sample-sheet.png): quality checklist, honest scores, rotation rule (reference-notes/recent-looks.md, created on first film).
+- tools/threejs-film/record.py: progress line now percent, frame n/N, elapsed, ETA (tested on a 2 s clip).
+- motion/build.md Section 13: render-progress rule, real-elements-only rule, background rule. Section 16: Remotion vs HyperFrames choice.
+- skills-map.md: HyperFrames now allowed as an engine.
+- motion-playbook.md: index row for backgrounds; Section 8: ban list extended (invented logo substitutes, stand-in shapes, repeated looks, weak backgrounds).
+- CLAUDE.md: one sentence on real logo/assets (md5 changes; original CLAUDE.md in Claude Stuff untouched).
+- Not verified: backgrounds judged on a still contact sheet at t=0 and t=3 only (motion not reviewed); not yet used in a real film; HyperFrames local route not installed or tested.
+- Backups: *.bak-2026-11-24.
+
+2026-11-24 (later), user liked the saturated dark glow look and wanted many more
+- NEW tools/backgrounds/backgrounds_glow.js (12 structures x 12 palettes, 42 curated), sample-sheet-glow.png, render_sheet.py --set glow; backgrounds.js exposes grain tile. motion/backgrounds.md updated.
+- Judged on still frames at t=3 only.
+
+2026-11-24 (01:25 IST), user: lines not elegant, wants smooth gradient orbs, elegance and premium
+- NEW tools/backgrounds/backgrounds_orbs.js (8 compositions x 12 palettes, 32 curated), sample-sheet-orbs.png, render_sheet.py --set orbs. Orb worlds are now the default; glow worlds kept as secondary (on request only).
+- motion/backgrounds.md and playbook Section 8: no hard, neon or stroked lines in backgrounds.
+- Two rounds on the still sheet (first round: drift/duet read as bokeh spots, halo and canopy had bands; fixed). Not seen in motion or behind UI yet.
+
+
+2026-11-24 (01:30 IST), user supplied the Shakeslip storyboard and background frames as the best look
+- NEW tools/backgrounds/backgrounds_lit.js (12 structures x 8 palettes, 28 curated), sample-sheet-lit.png, render_sheet.py --set lit. Reference frames kept in reference-notes/backgrounds/.
+- motion/backgrounds.md: Lit worlds are now the top tier, with 8 learned rules (one real light, tapered, layered bloom, line rule, brand marks from the real logo, palette x structure per scene, busy UI on flat, slow breathing). Orb worlds second, glow worlds on request only.
+- Playbook Section 8 line rule refined: thin, pale, tapered, faded lines allowed; hard, uniform or neon banned.
+- Two rounds on the still sheet (round 1 too dim and small next to the reference). Not seen in motion; stars are a placeholder mark.
+
+2026-11-24 (01:36 IST), user: more glowy blurred shapes, distortion, waves, repetition, contrast; plus a pasted AE guide for viral SaaS backgrounds
+- NEW tools/backgrounds/backgrounds_fx.js (WebGL2 shader pipeline: source shapes -> box + directional blur -> twirl -> lens -> scale -> dither -> exponential glow -> contrast; 10 modes x 8 palettes, 28 curated), sample-sheet-fx.png; render_sheet.py --set fx with software WebGL flags. Guide saved at reference-notes/backgrounds/viral-saas-backgrounds-guide.md.
+- motion/backgrounds.md: FX worlds section with the strict pipeline order and tuning lessons.
+- Three rounds on the still sheet (too loud and blown out; scratchy blur; stepped ribbon). Motion checked only as frame difference between t=3 and t=7, not watched.
+
+2026-11-24 (Shakeslip v07), learned from the user's background rounds and the v06 rejection
+- New motion/dark-glow-backgrounds.md: the approved dark glow background recipe (tinted base lit from the top, saturated brand hue via Adobe Color, additive light that peaks and fades in five layers, shape list with jobs and budgets, stars in front of lines, slow line motion, soft reveals instead of crossfades, the process that worked, one gotcha).
+- tools/examples/dark-glow-bg.js (reference code), dark-glow-worlds.png and dark-glow-shapes.png (the approved look).
+- motion-playbook.md: one index row. saas-explainer-style.md: pointer from style family 2.
+- motion/build.md Section 7 step 4: framing check (data-keep, 5% safe margin) for the "camera leaves things misaligned" rejection.
+- motion/product-films.md Section 12: never a payable QR for a demo payment handle; check real behaviour behind details (QR plate, paid invoice, tile order).
+- Backups: *.bak-2026-11-24
+
+2026-11-24 (02:27 IST), user supplied Motion_Studies.html (113 WebGL backgrounds; source of the Shakeslip studio looks)
+- tools/backgrounds/motion-studies/: original kept unchanged; motion-studies-render.html adds window.renderFrame(t) for ?bg=<slug> and a ?sheet=1 contact sheet; render_sheet.py; sample-sheet-all.png (all 113 at t=3).
+- tools/threejs-film/record.py: new --query option to pass URL parameters.
+- motion/backgrounds.md: Motion Studies is now the first choice, with 7 learned techniques (SDF + Gaussian bands, three-stop pigment ramp, satin ribbons, phase loops, proper quarter-res bloom with tone map and luminance grain, vignette/ambient, composition). Lit worlds relabelled as an approximation.
+- Verified: all 113 render; a 3 s 640x360 clip recorded (90 frames); loop seamless and renders repeatable (pixel diff 0).
+- motion/backgrounds.md points to motion/dark-glow-backgrounds.md (approved Shakeslip v07 recipe from another session, left unchanged).
+
+2026-11-24 (02:32 IST), user: libraries are guidance; add, mix, recolour, blur, animate freely; keep it pro and smooth
+- motion/backgrounds.md: new 'guidance, not a menu' section with the pro-and-smooth bar and the remix controls.
+- motion-studies-render.html: remix parameters colors, mix, mixAmt, mixColors, blur, hue, sat, bright (original Motion_Studies.html still unchanged). Tested: six remixes render without errors (sample-remixes.png); loop and repeatability still exact after the change.
+- motion/build.md Section 13 background line: 'start from ... as guidance' (edited on top of the other session's newer build.md).

@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#222;font:600 12px system-ui;color:#fff}
+#g{display:grid;gap:6px;padding:6px}div{position:relative}canvas{display:block}span{position:absolute;left:6px;top:4px;background:rgba(0,0,0,.55);padding:2px 6px;border-radius:4px}</style>
+<div id="g"></div><script src="backgrounds.js"></script><script src="backgrounds_glow.js"></script><script src="backgrounds_orbs.js"></script><script src="backgrounds_lit.js"></script><script src="backgrounds_fx.js"></script><script>
+const q=new URLSearchParams(location.search),t=+q.get('t')||0,set=q.get('set')||'base',g=document.getElementById('g');
+const names=set==='fx'?BG.fxNames:set==='lit'?BG.litNames:set==='orbs'?BG.orbNames:set==='glow'?BG.glowNames:BG.names.filter(n=>!BG.glowNames.includes(n));
+const cols=set==='base'?4:(set==='orbs'||set==='lit'||set==='fx'?4:6),cw=set==='base'||set==='orbs'||set==='lit'||set==='fx'?480:320,ch=cw*9/16;g.style.gridTemplateColumns=`repeat(${cols},${cw}px)`;
+names.forEach((n,i)=>{const d=document.createElement('div'),c=document.createElement('canvas');c.width=cw;c.height=ch;
+ BG.draw(n,c.getContext('2d'),cw,ch,t);const s=document.createElement('span');s.textContent=(i+1)+' '+n;d.append(c,s);g.append(d)});
+window.done=true;</script>

@@ -1,0 +1,14 @@
+# Backups made before edits (kept on the Mac only)
+*.bak*
+.DS_Store
+# Generated renders and media stay out of git (CLAUDE.md, Git rules); rebuild with the tools:
+#   python3 tools/backgrounds/render_sheet.py out.png --t 3 --set base|glow|orbs|lit|fx
+#   python3 tools/backgrounds/motion-studies/render_sheet.py out.png --t 3
+tools/backgrounds/sample-sheet*.png
+tools/backgrounds/motion-studies/sample-*.png
+*.mp4
+*.mov
+*.wav
+node_modules/
+__pycache__/
+.env*
